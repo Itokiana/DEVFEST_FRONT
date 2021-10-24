@@ -8,27 +8,16 @@ import {
 import Constitution from "./pages/Constitution/Constitution";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Login from "./pages/Login/Login";
+import NewCitoyenInfos from "./pages/NewCitoyenInfos/NewCitoyenInfos";
 import Register from "./pages/Register/Register";
 import ShowInfos from "./pages/ShowInfos/ShowInfos";
-import ShowInfos from "./pages/Validation/Validation";
+import ShowValidation from "./pages/ShowValidation/ShowValidation";
+import Validation from "./pages/Validation/Validation";
 
 export default function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Dashboard</Link>
-            </li>
-            <li>
-              <Link to="/register">Register</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-          </ul>
-        </nav>
 
         <Switch>
           <Route path="/register">
@@ -37,9 +26,7 @@ export default function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/">
-            <Dashboard />
-          </Route>
+          
           <Route path="/show-infos">
             <ShowInfos />
           </Route>
@@ -48,6 +35,15 @@ export default function App() {
           </Route>
           <Route path="/constitution">
             <Constitution />
+          </Route>
+          <Route path="/show-validation/:id">
+            <ShowValidation />
+          </Route>
+          <Route path="/new-citoyen-infos">
+            <NewCitoyenInfos />
+          </Route>
+          <Route path="/">
+            <Dashboard />
           </Route>
         </Switch>
       </div>
